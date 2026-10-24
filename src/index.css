@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-unbounded: 'Unbounded', sans-serif;
+    --font-gotham: 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: var(--font-gotham);
+    --font-display: var(--font-unbounded);
+    color-scheme: light dark;
+  }
+
+  html {
+    background-color: #f4f4f1;
+    color: #0c0c0e;
+  }
+
+  html.dark {
+    background-color: #0c0c0e;
+    color: #f4f4f4;
+  }
+
+  body {
+    font-family: var(--font-gotham);
+    color: #0c0c0e;
+    background-color: #f4f4f1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark body {
+    color: #f4f4f4;
+    background-color: #0c0c0e;
+  }
+}
+
+/* 
+ * The entire website strictly uses only TWO font families:
+ * 1. Unbounded (Headings, Menu, Brand, Numbers, Display Titles)
+ * 2. Gotham (Body, Monograph, Metadata, Controls, Tabular Numbers)
+ */
+.font-unbound,
+.font-unbounded,
+.font-syne,
+.font-serif-display {
+  font-family: 'Unbounded', sans-serif !important;
+}
+
+.font-gotham,
+.font-sans,
+.font-mono-tabular {
+  font-family: 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.font-mono-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Perspective & 3D transformations */
+.perspective-container {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Ensure all cover and showcase images render at ultra-crisp, high-definition resolution */
+img {
+  image-rendering: auto;
+  image-rendering: high-quality;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar for gallery tracks while preserving scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom subtle noise or paper grain */
+.paper-pattern {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.dark .paper-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.vertical-spine {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.font-serial-numeral {
+  font-family: 'Unbounded', sans-serif !important;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  display: inline-block;
+  line-height: 0.85;
+}
+
+.stroke-numeral-white {
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.2);
+}
+
+/* Nautical Anchor Mouse Cursor Mode */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"],
+  * {
+    cursor: url('/anchor-cursor.svg') 16 2,
+      url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj4KICA8IS0tIEJsYWNrIGNvbnRyYXN0IGJhY2tpbmcgKHdvcmtzIDEwMCUgcmVsaWFibHkgaW4gYWxsIGJyb3dzZXJzIHdpdGhvdXQgU1ZHIGZpbHRlciBkZXBlbmRlbmNpZXMpIC0tPgogIDxnIHN0cm9rZT0iIzAwMDAwMCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDwhLS0gVG9wIFJpbmcgLyBTaGFja2xlIC0tPgogICAgPGNpcmNsZSBjeD0iMTYiIGN5PSI1LjUiIHI9IjMuMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSI0LjIiIC8+CiAgICAKICAgIDwhLS0gQ3Jvc3NiYXIgLyBTdG9jayB3aXRoIEVuZCBLbm9icyAtLT4KICAgIDxsaW5lIHgxPSI4LjUiIHkxPSIxMiIgeDI9IjIzLjUiIHkyPSIxMiIgc3Ryb2tlLXdpZHRoPSI0LjIiIC8+CiAgICA8Y2lyY2xlIGN4PSI4LjUiIGN5PSIxMiIgcj0iMi4yIiBzdHJva2Utd2lkdGg9IjEiIC8+CiAgICA8Y2lyY2xlIGN4PSIyMy41IiBjeT0iMTIiIHI9IjIuMiIgc3Ryb2tlLXdpZHRoPSIxIiAvPgoKICAgIDwhLS0gQ2VudGVyIFNoYW5rIC0tPgogICAgPGxpbmUgeDE9IjE2IiB5MT0iOCIgeDI9IjE2IiB5Mj0iMjUuNSIgc3Ryb2tlLXdpZHRoPSI0LjIiIC8+CgogICAgPCEtLSBDdXJ2ZWQgQXJtcyAtLT4KICAgIDxwYXRoIGQ9Ik0gNi41IDE4IEMgNi41IDI2LjgsIDI1LjUgMjYuOCwgMjUuNSAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSI0LjIiIC8+CgogICAgPCEtLSBMZWZ0ICYgUmlnaHQgRmx1a2VzIChUaXBzKSAtLT4KICAgIDxwb2x5Z29uIHBvaW50cz0iMy41LDE5IDguNSwxNS4yIDkuMiwyMS41IiBzdHJva2Utd2lkdGg9IjEuOCIgLz4KICAgIDxwb2x5Z29uIHBvaW50cz0iMjguNSwxOSAyMy41LDE1LjIgMjIuOCwyMS41IiBzdHJva2Utd2lkdGg9IjEuOCIgLz4KCiAgICA8IS0tIENyb3duIGJvdHRvbSBub2RlIC0tPgogICAgPGNpcmNsZSBjeD0iMTYiIGN5PSIyNyIgcj0iMi4yIiBzdHJva2Utd2lkdGg9IjEiIC8+CiAgPC9nPgoKICA8IS0tIFB1cmUgV2hpdGUgLyBDaHJvbWUgRm9yZWdyb3VuZCBDb3JlIC0tPgogIDxnIHN0cm9rZT0iI2ZmZmZmZiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDwhLS0gVG9wIFJpbmcgLyBTaGFja2xlIC0tPgogICAgPGNpcmNsZSBjeD0iMTYiIGN5PSI1LjUiIHI9IjMuMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiAvPgoKICAgIDwhLS0gQ3Jvc3NiYXIgLyBTdG9jayB3aXRoIEVuZCBLbm9icyAtLT4KICAgIDxsaW5lIHgxPSI4LjUiIHkxPSIxMiIgeDI9IjIzLjUiIHkyPSIxMiIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgPGNpcmNsZSBjeD0iOC41IiBjeT0iMTIiIHI9IjEuMiIgc3Ryb2tlLXdpZHRoPSIwLjUiIC8+CiAgICA8Y2lyY2xlIGN4PSIyMy41IiBjeT0iMTIiIHI9IjEuMiIgc3Ryb2tlLXdpZHRoPSIwLjUiIC8+CgogICAgPCEtLSBDZW50ZXIgU2hhbmsgLS0+CiAgICA8bGluZSB4MT0iMTYiIHkxPSI4IiB4Mj0iMTYiIHkyPSIyNS41IiBzdHJva2Utd2lkdGg9IjIiIC8+CgogICAgPCEtLSBDdXJ2ZWQgQXJtcyAtLT4KICAgIDxwYXRoIGQ9Ik0gNi41IDE4IEMgNi41IDI2LjgsIDI1LjUgMjYuOCwgMjUuNSAxOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiAvPgoKICAgIDwhLS0gTGVmdCAmIFJpZ2h0IEZsdWtlcyAoVGlwcykgLS0+CiAgICA8cG9seWdvbiBwb2ludHM9IjQuMiwxOSA4LjIsMTYgOC44LDIwLjgiIHN0cm9rZS13aWR0aD0iMC41IiAvPgogICAgPHBvbHlnb24gcG9pbnRzPSIyNy44LDE5IDIzLjgsMTYgMjMuMiwyMC44IiBzdHJva2Utd2lkdGg9IjAuNSIgLz4KCiAgICA8IS0tIENyb3duIGJvdHRvbSBub2RlIC0tPgogICAgPGNpcmNsZSBjeD0iMTYiIGN5PSIyNi44IiByPSIxLjIiIHN0cm9rZS13aWR0aD0iMC41IiAvPgogIDwvZz4KPC9zdmc+Cg==') 16 2,
+      default !important;
+  }
+}
+

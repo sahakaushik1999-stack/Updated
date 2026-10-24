@@ -1,0 +1,13 @@
+# Ignored files for Google Cloud Build / Deploy
+.git/
+.gitignore
+node_modules/
+dist/
+dist-server/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+*.tmp*
+*.mp4.tmp.mp4

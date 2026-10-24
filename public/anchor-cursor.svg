@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Black contrast backing (works 100% reliably in all browsers without SVG filter dependencies) -->
+  <g stroke="#000000" fill="#000000" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Top Ring / Shackle -->
+    <circle cx="16" cy="5.5" r="3.2" fill="none" stroke-width="4.2" />
+    
+    <!-- Crossbar / Stock with End Knobs -->
+    <line x1="8.5" y1="12" x2="23.5" y2="12" stroke-width="4.2" />
+    <circle cx="8.5" cy="12" r="2.2" stroke-width="1" />
+    <circle cx="23.5" cy="12" r="2.2" stroke-width="1" />
+
+    <!-- Center Shank -->
+    <line x1="16" y1="8" x2="16" y2="25.5" stroke-width="4.2" />
+
+    <!-- Curved Arms -->
+    <path d="M 6.5 18 C 6.5 26.8, 25.5 26.8, 25.5 18" fill="none" stroke-width="4.2" />
+
+    <!-- Left & Right Flukes (Tips) -->
+    <polygon points="3.5,19 8.5,15.2 9.2,21.5" stroke-width="1.8" />
+    <polygon points="28.5,19 23.5,15.2 22.8,21.5" stroke-width="1.8" />
+
+    <!-- Crown bottom node -->
+    <circle cx="16" cy="27" r="2.2" stroke-width="1" />
+  </g>
+
+  <!-- Pure White / Chrome Foreground Core -->
+  <g stroke="#ffffff" fill="#ffffff" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Top Ring / Shackle -->
+    <circle cx="16" cy="5.5" r="3.2" fill="none" stroke-width="2" />
+
+    <!-- Crossbar / Stock with End Knobs -->
+    <line x1="8.5" y1="12" x2="23.5" y2="12" stroke-width="2" />
+    <circle cx="8.5" cy="12" r="1.2" stroke-width="0.5" />
+    <circle cx="23.5" cy="12" r="1.2" stroke-width="0.5" />
+
+    <!-- Center Shank -->
+    <line x1="16" y1="8" x2="16" y2="25.5" stroke-width="2" />
+
+    <!-- Curved Arms -->
+    <path d="M 6.5 18 C 6.5 26.8, 25.5 26.8, 25.5 18" fill="none" stroke-width="2" />
+
+    <!-- Left & Right Flukes (Tips) -->
+    <polygon points="4.2,19 8.2,16 8.8,20.8" stroke-width="0.5" />
+    <polygon points="27.8,19 23.8,16 23.2,20.8" stroke-width="0.5" />
+
+    <!-- Crown bottom node -->
+    <circle cx="16" cy="26.8" r="1.2" stroke-width="0.5" />
+  </g>
+</svg>
